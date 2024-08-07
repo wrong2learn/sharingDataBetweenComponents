@@ -1,0 +1,12 @@
+<p>{{componentName}}</p>
+
+<button (click)="clicked()">Click here to read the message.</button>
+
+<div *ngIf="!hasBeenRead">
+    <app-child [showMessage]="hasClicked" (messageHasBeenRead)="onRecive($event)"></app-child>
+</div>
+<div *ngIf="hasBeenRead">
+    <p>You have read the message !!</p>
+
+    <button (click)="reset()">Reset</button>
+</div>
